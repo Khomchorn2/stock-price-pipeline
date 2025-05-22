@@ -1,22 +1,23 @@
-# stock-price-pipeline
-A mock ETL project that extracts Thai Government Lottery results from a website, transforms the data with Python, and loads it into BigQuery. Dashboard built with Power BI.
+# 📈 Stock Price Pipeline (Mock Project)
 
-## 🔧 Tools Used
-- Python (Requests, BeautifulSoup, Pandas)
-- Google BigQuery
-- dbt (optional)
-- Power BI
+A simple data engineering pipeline that extracts stock price data (SET, Nasdaq), transforms it using Python, and loads it into BigQuery for analysis and visualization.
 
-## 🔄 ETL Pipeline
-1. **Extract**: Scrape latest lottery results from website
-2. **Transform**: Clean and format into structured table
-3. **Load**: Upload to BigQuery via API
-4. **Visualize**: Build Dashboard on Power BI
+---
 
-## 📊 Output Example
-![dashboard](dashboard/screenshot.png)
+## 🔧 Tools & Tech Stack
 
-## 🧠 What I Learned
-- How to work with BigQuery API
-- Practice scheduling ETL job
-- Data cleaning using Pandas
+- 🐍 Python (Requests, Pandas)
+- ☁️ Google BigQuery
+- ⏱ Airflow (หรือ Crontab สำหรับ schedule)
+- 📊 Power BI / Looker Studio (Dashboard)
+- 🔄 dbt (Optional)
+
+---
+
+## 🔄 ETL Pipeline Flow
+
+```mermaid
+graph LR
+A[Extract from API] --> B[Transform with Pandas]
+B --> C[Load to BigQuery]
+C --> D[Dashboard Visualization]
